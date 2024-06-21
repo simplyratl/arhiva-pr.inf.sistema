@@ -8,17 +8,22 @@ class Home extends BaseController
 {
     public function index(): string
     {
-//        $model = model('TempDocumentModel');
-//
-//        $data = $model->findAll();
+        $model = model('TempDocumentModel');
 
-        $data = [
-            ['name' => 'Test123'],
-            ['name' => 'Test456'],
-        ];
+        $data = $model->findAll();
 
         return view('home/index', [
             'documents' => $data
+        ]);
+    }
+
+    public function update($id) {
+        $model = model('TempDocumentModel');
+
+        $tempDocument = $model->find($id);
+
+        return view('home/update', [
+            'document' => $tempDocument
         ]);
     }
 }
