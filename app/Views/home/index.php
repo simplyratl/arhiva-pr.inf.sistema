@@ -7,6 +7,10 @@
     <button class="btn btn-primary">test123</button>
 
     <?php foreach ($documents as $document): ?>
-        <h2><?= $document['name'] ?></h2>
+        <h2>
+            <a href="/temp-documents/<?= $document['id'] ?>">
+            <?= $document['name'] ?>
+            </a>
+        </h2>
     <?php endforeach; ?>
 <?= $this->endSection() ?>

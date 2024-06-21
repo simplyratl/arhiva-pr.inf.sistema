@@ -26,4 +26,8 @@ class Home extends BaseController
             'document' => $tempDocument
         ]);
     }
+
+    public function updateReq($id) {
+        dd($this->request->getPost());
+    }
 }
