@@ -4,16 +4,16 @@ namespace App\Models;
 
 use CodeIgniter\Model;
 
-class TempDocumentModel extends Model
+class DocumentModel extends Model
 {
-    protected $table = 'tempDocument';
-    protected $allowedFields = ['name', 'createdAt', 'updatedAt', 'boxNumber', 'registerNumber', 'documentTypeId', 'documentPath', 'userId'];
+    protected $table = 'document';
+    protected $allowedFields = ['name', 'createdAt', 'updatedAt', 'boxNumber', 'registerNumber', 'documentTypeId', 'documentPath', 'sectorId', 'shelf', 'shelfRow', 'shelfColumn', 'privacy', 'userId'];
     protected $validationRules = [
         'name' => 'required|max_length[255]',
         'boxNumber' => 'required|integer',
         'registerNumber' => 'required|integer',
         'documentTypeId' => 'required|integer',
-        'documentPath' => 'required'
+        'documentPath' => 'required',
     ];
 
     protected $validationMessages = [
@@ -37,6 +37,5 @@ class TempDocumentModel extends Model
             'required' => 'Dokument je obavezan'
         ]
     ];
-
 
 }
